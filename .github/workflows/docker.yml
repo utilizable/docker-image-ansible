@@ -7,17 +7,10 @@ permissions:
   packages: write
 
 on:
-  # Allow to re-use this jobs;
-  workflow_call:
-  # Trigger minor update;
-  # Trigger patch update;
-  push:
-  # Trigger major update;
+  # Trigger manually;
   workflow_dispatch:
 
-
 jobs:
-
 # -----------------
 # SEMVER 
 # -----------------
@@ -30,11 +23,8 @@ jobs:
 # -----------------
 
   building:
-#    runs-on: ubuntu-latest
     needs: semver
-#    steps:
-#      - run: echo ${{needs.semver.outputs.tag}} 
     uses: utilizable/github-actions-docker-building/.github/workflows/building.yml@develop
     with:
       tag: ${{ needs.semver.outputs.tag }}
-
+      
