@@ -13,8 +13,17 @@ permissions:
 jobs:
 
 # -----------------
+# SEMVER 
+# -----------------
+
+  semver:
+    uses: utilizable/github-actions-semver-tagging/.github/workflows/semver.yml@feat/output
+
+# -----------------
 # DOCKER BUILDING
 # -----------------
 
   building:
-    uses: utilizable/github-actions-docker-building/.github/workflows/building.yml@develop
+    steps:
+      - run: echo ${{needs.semver.outputs.output1}} 
+#    uses: utilizable/github-actions-docker-building/.github/workflows/building.yml@develop
