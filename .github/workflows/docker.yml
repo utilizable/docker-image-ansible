@@ -1,14 +1,20 @@
 name: docker 
 
-on:
-  push:
-  workflow_dispatch:
-
 # Allow repository modyfication;
 permissions:
   contents: write
   pull-requests: write
+
+on:
+  # Allow to re-use this jobs;
+  workflow_call:
+  # Trigger minor update;
+  # Trigger patch update;
+  push:
+  # Trigger major update;
+  workflow_dispatch:
   packages: write
+
 
 jobs:
 
