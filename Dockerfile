@@ -9,5 +9,4 @@ RUN apk --no-cache add \
     git
 
 # Set metadata for the image
-LABEL maintainer="utilizable"
 LABEL description="Ansible image based on alpine for automation tasks"
