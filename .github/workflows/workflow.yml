@@ -1,4 +1,4 @@
-name: docker 
+name: workflow 
 
 # Allow repository modyfication;
 permissions:
@@ -7,10 +7,13 @@ permissions:
   packages: write
 
 on:
+  # Trigger automaticly;  
+  push:
   # Trigger manually;
   workflow_dispatch:
 
 jobs:
+
 # -----------------
 # SEMVER 
 # -----------------
