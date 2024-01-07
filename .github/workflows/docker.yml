@@ -26,4 +26,4 @@ jobs:
   building:
     steps:
       - run: echo ${{needs.semver.outputs.output1}} 
-#    uses: utilizable/github-actions-docker-building/.github/workflows/building.yml@develop
+    uses: utilizable/github-actions-docker-building/.github/workflows/building.yml@develop
